@@ -1,35 +1,85 @@
 <!DOCTYPE html>
 <html>
 
-   <head>
-      <title>Exercise Tracker | Free Code Camp</title>
-      <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
+<head>
+  <title>Exercise Tracker</title>
+  <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png"
+    type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
 
-   <body>
-      <div class="container">
-         <h1>Exercise tracker</h1>
-          <form action="/api/exercise/new-user" method="post">
-            <h3>Create a New User</h3>
-            <p><code>POST /api/exercise/new-user</code></p>
-            <input id="uname" type="text" name="username" placeholder="username">
+<body>
+  <div class="container">
+    <header>
+
+      <h2>API Project: Exercise Tracker</h2>
+      <p>
+        This is my project of the <a
+          href="https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/exercise-tracker"
+          target="_blank">
+         Exercise Tracker challenge </a> for the freeCodeCamp API and Microservice certification.
+        It was built based on the boilerplate available <a
+          href="https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/" target="_blank">here</a>.
+      </p>
+
+    </header>
+
+    <section>
+
+      <h3>Create a New User</h3>
+      <code>POST /api/exercise/new-user</code>
+
+      <form action="/api/exercise/new-user" method="post">
+        <fieldset>
+          <legend>New User</legend>
+          <input id="uname" type="text" name="username" placeholder="username">
+          <div class="buttonWrapper">
             <input type="submit" value="Submit">
-          </form>
-          <form action="/api/exercise/add" method="post">
-            <h3>Add exercises</h3>
-            <p><code>POST /api/exercise/add</code></p>
-            <input id="uid" type="text" name="userId" placeholder="userId*">
-            <input id="desc" type="text" name="description" placeholder="description*">
-            <input id="dur" type="text" name="duration" placeholder="duration* (mins.)">
-            <input id="dat" type="text" name="date" placeholder="date (yyyy-mm-dd)">
+          </div>
+        </fieldset>
+      </form>
+
+      <h3>Add exercises</h3>
+      <code>POST /api/exercise/add</code>
+
+      <form action="/api/exercise/add" method="post">
+        <fieldset>
+          <legend>Add Exercise</legend>
+          <input id="uid" type="text" name="userId" placeholder="userId*">
+          <input id="desc" type="text" name="description" placeholder="description*">
+          <input id="dur" type="text" name="duration" placeholder="duration* (mins.)">
+          <input id="dat" type="text" name="date" placeholder="date (yyyy-mm-dd)">
+          <div class="buttonWrapper">
             <input type="submit" value="Submit">
-          </form>
-          <p><strong>GET users's exercise log: </strong><code>GET /api/exercise/log?{userId}[&amp;from][&amp;to][&amp;limit]</code></p>
-          <p><strong>{ }</strong> = required, <strong>[ ]</strong> = optional</p>
-          <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
+          </div>
+        </fieldset>
+      </form>
+
+      <h3>Get users's exercise log:</h3>
+      <p>
+        Just hit the endpoint below. Notice that the 'userId' query param is required, while the other ones are optional.
+      </p>
+
+      <div class="codeWrapper">
+        <code>
+          GET /api/exercise/log?{userId}[&amp;from][&amp;to][&amp;limit]
+          <br><br>
+          // from, to = dates (YYYY-MM-DD); limit = number
+        </code>
       </div>
-   </body>
+
+    </section>
+    
+    <footer>
+  
+      <p>
+        By <a href="https://www.github.com/andradeoromulo" target="_blank">Rômulo Andrade</a> for <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a> certification.
+      </p>
+  
+    </footer>
+
+  </div>
+</body>
 
 </html>
