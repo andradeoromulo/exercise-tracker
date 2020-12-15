@@ -18,6 +18,8 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+app.use(bodyParser.json());
+
 // Static files
 app.use(express.static("public"));
 
@@ -26,7 +28,7 @@ app.get("/", (req, res) => {
   res.status(200).sendFile(`${__dirname}/views/index.html`);
 });
 
-app.use("/", exerciseRouter);
+app.use("/api/exercise", exerciseRouter);
 
 // No matching route 
 app.use(function(req, res) {
