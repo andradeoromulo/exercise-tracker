@@ -191,7 +191,7 @@ exports.validate = (method) => {
                     .isLength({ min: 1, max: 9999 }).withMessage('duration must have between 1 and 9999 characters')
                     .isNumeric().withMessage('duration must be a number'),
                 body("date")
-                    .optional()
+                    .optional({ checkFalsy: true })
                     .trim()    
                     .isISO8601()
                     .withMessage('invalid date format')
